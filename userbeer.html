@@ -1,0 +1,34 @@
+﻿<!-- Copyright 2014 Daiki Nogami -->
+
+<!-- START PAGE -->
+<div id="userListPage" data-role="page" data-theme="c">
+
+    <!-- START HEADER -->
+    <div data-role="header" data-theme="c" data-position="fixed">
+        <h1>Beer Geek</h1>
+    	<a href="javascript:moveToAddBeerPage()" data-icon="plus" data-theme="b">Add</a>
+        <a href="javascript:moveToUserPage()" data-icon="gear" data-theme="b">Option</a>
+
+        <div data-role="navbar" data-theme="a" data-iconpos="left">
+            <ul>
+                <li><a href="main.html" data-icon="grid" >All</a></li>
+                <li><a href="userbeer.html" class="ui-btn-active" data-icon="star">User's</a></li>
+                <li><a href="search.html" data-icon="search">Search</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- END HEADER -->
+    
+    <!-- START CONTENT -->
+    <div data-role="content">
+
+        <ul id="my_listview" data-role="listview" data-split-icon="delete" data-theme="d"></ul>
+
+        <ul id="search_listview" data-role="listview" data-split-icon="delete" data-theme="d" class="hide"></ul>
+
+    </div>
+    <!-- END CONTENT -->
+    
+    
+</div>
+<!-- END PAGE -->

@@ -1,0 +1,92 @@
+﻿<!-- 
+    Copyright 2014 Daiki Nogami 
+-->
+
+
+<!--For preventing intercept access-->
+<script type="text/javascript">
+    //<![CDATA[
+    try{
+        KiiUser;
+    }catch(e){
+        location.href = "http://dl.dropboxusercontent.com/u/181118079/webapp/index.html";
+    }
+    //]]>
+</script>
+
+
+<!-- START PAGE -->
+<div id="addBeerPage" data-role="page" data-theme="c">
+
+    <!-- START HEADER -->
+    <div data-role="header" data-theme="c" data-position="fixed">
+        <h1>Add Beer Info</h1>
+    	<a href="javascript:moveToMainPage()" data-icon="home" data-theme="b">Home</a>
+    </div>
+    <!-- END HEADER -->
+    
+    <!-- START CONTENT -->
+    <div data-role="content">
+
+        <h2>Beer Info</h2>
+
+        <div class="inputBox flexbox box-align">
+            <h4 class="inputLabel" for="basic">銘柄:</h4>
+            <input id="inputName" type="text" name="name" value=""  style="margin-right: 10px;" />
+            <select name="selectBeerName" id="selectBeerName">
+                <option value="-1">新規入力</option>
+            </select>
+        </div>
+
+        <div class="inputBox flexbox box-align">
+            <h4 class="inputLabel" for="basic">製造元:</h4>
+            <input id="inputBruery" type="text" name="bruery" value="" style="margin-right: 10px;" />
+            <select name="selectBrueryName" id="selectBrueryName">
+                <option value="-1">新規入力</option>
+            </select>
+        </div>
+
+        <div class="inputBox flexbox box-align">
+            <h4 class="inputLabel" for="basic">種類:</h4>
+            <input id="inputCategory" type="text" name="category" value="" style="margin-right: 10px;" />
+            <select name="selectCategoryName" id="selectCategoryName">
+                <option value="-1">新規入力</option>
+            </select>
+        </div>
+
+        <div class="inputBox flexbox box-align">
+            <h4 class="inputLabel" for="basic">度数[%]:</h4>
+            <input id="inputAlcohol" type="text" name="alcohol" value=""  />
+        </div>
+
+        <div class="inputBox flexbox">
+            <h4 class="inputLabel" for="basic">色:</h4>
+            <div id="outputColorBox" style="width: 80px; height: 80px;"></div>
+            <div style="display: block;">
+                <div class="flexbox" data-role="fieldcontain">
+                    <label class="inputLabelMini" for="basic">色み:</label>
+                    <input type="range" name="slider" class="slideBar" id="sliderH" value="40" min="10" max="70" style="display: none;" />
+                </div>
+                <div class="flexbox" data-role="fieldcontain">
+                    <label class="inputLabelMini" for="basic">明度:</label>
+                    <input type="range" name="slider" class="slideBar" id="sliderL" value="50" min="0" max="100" style="display: none;" />
+                </div>
+            </div> 
+        </div>        
+
+        <hr>
+        <h2>Your Opinion</h2>
+
+
+        <p id="addBeerError"></p>
+
+        <div style='margin:32px auto 32px auto; max-width: 300px;'>
+            <a href='javascript:addNewBeer()' id='addBeerButton' data-role='button' data-theme='b'>Share Beer!</a>
+        </div>
+
+    </div>
+    <!-- END CONTENT -->
+
+    
+</div>
+<!-- END PAGE -->

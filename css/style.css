@@ -1,0 +1,161 @@
+
+/*Common Style*/
+.hide{
+	display: none;
+}
+.flexbox{
+	display: -webkit-box;     /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex; 
+}
+.block{
+	display: block;
+}
+.justify{
+	justify-content: space-between;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+}
+
+.box-align{
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	box-align: center;
+}
+
+
+/*Beer List*/
+.colorBox{
+	margin: 15px 0px 0px 15px;
+	width: 40px;
+	height: 80px;
+	float: left;
+}
+.iscroll-pulldown{
+	background-color: rgb(249, 249, 249);
+}
+
+
+/*Login Page*/
+.backgroundImage{
+	position: absolute;
+	min-height: 550px;
+	height: 100%;
+	width: 100%;
+	background-image: url("../images/beer_cheer.jpg");
+	background-size: cover;
+	margin: 0px !important;
+}
+.loginText{
+	margin-top: 30px;
+	padding: 40px 40px 40px 40px;
+	color: white;
+	background-color: rgba(33,33,33,0.5);
+	max-width: 600px;
+}
+
+
+
+/*Beer Page*/
+
+
+
+/*User Beer Page*/
+
+
+/*Search Page*/
+#searchValue{
+	max-width: 200px;
+}
+
+
+/*Add Beer Page*/
+.inputBox{
+	margin: 18px;
+}
+.inputLabel{
+	width: 100px;
+}
+.inputLabelMini{
+	width: 70px;
+	margin: 10px;
+}
+.slideBar{
+	/*width: 50px;*/
+	display: none;
+}
+.ui-slider{
+	margin-top: 5px !important;
+}
+#outputColorBox{
+	width: 80px;
+	height: 80px;
+	margin-top: 22px;
+}
+#inputName, 
+#inputBruery,
+#inputCategory,
+#inputAlcohol{
+	max-width: 200px;
+}
+#selectInputName,
+#selectInputBruery,
+#selectInputCategory{
+
+}
+.ui-slider.ui-btn-down-c.ui-btn-corner-all{
+	width: 150px;
+}
+#addBeerError {
+    color: red;
+}
+
+
+/*Detail Beer Page*/
+.starLabel{
+	margin-right: 10px;
+	vertical-align: bottom;
+	line-height: 28px;
+}
+.color-secondary{
+	color: rgb(100, 100, 100);
+}
+.alcoholLabel{
+	height: 30px;
+	border-radius: 10px;
+	border: solid 1px rgb(150, 150, 150);
+	padding: 10px;
+	margin: 10px 20px;
+	box-shadow: 4px 4px 4px rgba(0,0,0,0.4);
+}
+.ellipsis{
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+#detail_opinion{
+	margin-top: 20px;
+}
+.userStarLabel{
+	margin-right: 10px;
+	vertical-align: bottom;
+	font-weight: lighter;
+}
+.beerCanvasMiniChart{
+	margin-right: 10px;
+	font-weight: lighter;
+	font-size: 10px;
+	float: right;
+}
+
+
+/*User Page*/
+#userNameError {
+    color: red;
+}
+#inputUserName {
+    max-width: 300px;
+}

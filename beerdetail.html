@@ -1,0 +1,63 @@
+<!-- 
+    Copyright 2014 Daiki Nogami 
+-->
+
+
+<!--For preventing intercept access-->
+<script type="text/javascript">
+    //<![CDATA[
+    try{
+        KiiUser;
+    }catch(e){
+        location.href = "http://dl.dropboxusercontent.com/u/181118079/webapp/index.html";
+    }
+    //]]>
+</script>
+
+<!-- START PAGE -->
+<div id="beerDetailPage" data-role="page" data-theme="c">
+
+    <!-- START HEADER -->
+    <div data-role="header" data-theme="c" data-position="fixed">
+        <h1>Beer Info</h1>
+    	<a href="javascript:moveToMainPage()" data-icon="home" data-theme="b">Home</a>
+    </div>
+    <!-- END HEADER -->
+    
+    <!-- START CONTENT -->
+    <div data-role="content">
+        <div id="beerDetail">
+            <h2 id="detailBeerName">スルガベイ</h2>
+            <div class="flexbox">
+                <div style="max-width: calc(100% - 110px);">
+                    <h4 class="color-secondary" style="margin: 10px 0px;" id="detailBruery">ベアードブルーイング</h4>
+                    <h4 class="color-secondary" style="margin: 10px 0px;" id="detailCategory">IPA</h4>
+                </div>
+                <h2 class="alcoholLabel" id="detailAlcohol">7.5%</h2>
+            </div>
+            <div class="flexbox box-align">
+                <div class="starLabel">人気:</div>
+                <div class="starLabel" style="font-weight: bold;">3.2</div>
+                <div id="starBeer"></div>
+            </div>
+
+            <label>評価:</label>
+            <div class="beerCanvasChart" style="font-weight: bold;">
+                <canvas width="250" height="250"></canvas>
+                <div class="chartInput">
+                    <input type="hidden" value="2" name="コク" />
+                    <input type="hidden" value="1" name="キレ" />
+                    <input type="hidden" value="1" name="苦味" />
+                    <input type="hidden" value="5" name="ボディ" />
+                    <input type="hidden" value="3" name="香り" />
+                </div>
+            </div>
+        </div>
+
+        <ul id="detail_opinion" data-role="listview" data-split-icon="delete" data-theme="d"></ul>
+    </div>
+    <!-- END CONTENT -->
+    
+    
+</div>
+<!-- END PAGE -->

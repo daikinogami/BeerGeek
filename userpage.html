@@ -1,0 +1,67 @@
+﻿<!-- 
+    Copyright 2014 Daiki Nogami 
+-->
+
+
+<!--For preventing intercept access-->
+<script type="text/javascript">
+    //<![CDATA[
+    try{
+        KiiUser;
+    }catch(e){
+        location.href = "http://dl.dropboxusercontent.com/u/181118079/webapp/index.html";
+    }
+    //]]>
+</script>
+
+<!-- START PAGE -->
+<div id="userInfoPage" data-role="page" data-theme="c">
+
+    <!-- START HEADER -->
+    <div data-role="header" data-theme="c" data-position="fixed">
+        <h1>Options</h1>
+    	<a href="javascript:moveToMainPage()" data-icon="home" data-theme="b">Home</a>
+    </div>
+    <!-- END HEADER -->
+    
+    <!-- START CONTENT -->
+    <div data-role="content">	
+
+        <h2>User Infomation</h2>
+
+        <ul data-role="listview" data-inset="true"> 
+            <li> 
+                <h3>ユーザー名(英数字4-50文字):</h3> 
+                <input id="inputUserName" type="text" name="name" value=""  />
+                <p id="userNameError"></p>
+            </li> 
+            <li> 
+                <h3>登録ビール数:</h3> 
+                <p><strong id="userBeerCountOutput"></strong></p>
+            </li>
+            <li> 
+                <h3>User ID:</h3> 
+                <p><strong id="userIdOutput"></strong></p>
+            </li> 
+            <li> 
+                <h3>Log out:</h3> 
+                <div style="max-width: 300px;">
+                    <button id="logOutButton">Log Out</button>
+                </div>
+            </li> 
+        </ul> 
+
+        <h2>About this app</h2>
+        <p>Beer Geek ver 0.1.1402080</p>
+        <p>Copyright 2014 Daiki Nogami</p>
+        
+        <div style='margin:50px auto 32px auto; max-width: 300px;'>
+            <a href='javascript:updateUserInfo()' id='saveUserInfoButton' data-role='button' data-theme='b'>Save It!</a>
+        </div>
+
+    </div>
+    <!-- END CONTENT -->
+    
+    
+</div>
+<!-- END PAGE -->

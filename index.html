@@ -1,0 +1,128 @@
+﻿<!-- 
+    Copyright 2014 Daiki Nogami 
+-->
+
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Beer Geek</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+        <script src="./js/jquery.raty.min.js" type="text/javascript"></script>
+        <script src="./js/iscroll.js" type="text/javascript"></script>
+        <script src="./js/jquery.mobile.iscrollview.js" type="text/javascript"></script>
+        <script src="./js/jquery.canvasChart.js" type="text/javascript"></script>
+        <!--[if IE]><script type="text/javascript" src="./js/excanvas.compiled.js"></script><![endif]-->
+
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+        <link href="./css/jquery.mobile.iscrollview.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="./css/jquery.mobile.iscrollview-pull.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+        <script type="text/javascript" src="./js/KiiSDKv2.1.5.js"></script>
+        
+        <!-- my script -->
+        <script type="text/javascript" src="./js/login.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./js/main.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./js/search.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./js/beerdetail.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./js/addbeer.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./js/userpage.js" charset="utf-8"></script>
+        <link rel="stylesheet" href="./css/style.css" charset="utf-8"/>
+
+    </head>
+    
+    <body>
+    
+        <script type="text/javascript">
+            //<![CDATA[
+            // when this page loads, load the existing objects from the server
+            $("#listPage").live('pageinit', function (event, ui) {
+                $(ui.prevPage).remove();
+                switch(selectedMainPage){
+                    case "all":
+                        moveToAllPage();
+                        break;
+                    case "user":
+                        moveToUserPage();
+                        break;
+                    case "search":
+                        moveToSearchPage();
+                        break;
+                }
+                $(".iScrollContent").bind({
+                 iscroll_onpulldown : onPullDown
+                 });
+                // $("#iScrollContent").bind({
+                //  iscroll_onpulldown : onPullDown,
+                //  iscroll_onpullup   : onPullUp
+                //  });
+            });
+
+            $("#addBeerPage").live('pageinit', function (event, ui) {
+                $(ui.prevPage).remove();
+                //Initilaize Slide Bar
+                initializeSlideBar();
+                initializeSelectDOM();
+            });
+
+            $("#userInfoPage").live('pageinit', function (event, ui) {
+                $(ui.prevPage).remove();
+                initializeUserPage();
+                $("#logOutButton").bind("click", logOutFromApp);
+            });
+
+            $("#beerDetailPage").live('pageinit', function (event, ui) {
+                $(ui.prevPage).remove();
+                initializeBeerDetail();
+            });
+
+            //]]>
+        </script>
+
+
+        <!--
+        *
+        * Log In page
+        *
+        *
+        -->
+        <!-- START PAGE -->
+        <div id="loginPage" data-role="page" data-theme="c">
+            
+            <!-- START HEADER -->
+            <div data-role="header" data-theme="c">
+                <h1>Get Started!</h1>
+            </div>
+            <!-- END HEADER -->
+            
+            <!-- START CONTENT -->
+            <div data-role="content" style="padding: 0px;">   
+            
+                <div class="backgroundImage"  data-role=”none”>
+                    <div class="loginText">
+                        <h1 style="color: white">ビール情報をみんなで共有しよう！</h1>
+                        <h3 style="color: white">Facebookアカウントで今すぐ試そう</h3>
+                    </div>
+
+                    <div style="margin:150px auto 32px auto; max-width: 300px;　">
+                        <!-- <a href="#" id="register-button" data-role="button" data-theme="e" style="margin-bottom:20px;">Register</a> -->
+                        <a href="#" id="login-button" data-role="button" data-theme="b">Log In by Facebook Account</a>                
+                    </div>
+                </div>
+              
+            </div>
+            <!-- END CONTENT -->           
+        </div>
+        <!-- END PAGE -->
+
+
+
+
+    </body>
+
+</html>

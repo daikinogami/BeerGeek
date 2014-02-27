@@ -1,0 +1,55 @@
+﻿Copyright 2014 Daiki Nogami -->
+
+<!-- START PAGE -->
+<div id="searchPage" data-role="page" data-theme="c">
+
+    <!-- START HEADER -->
+    <div data-role="header" data-theme="c" data-position="fixed">
+        <h1>Beer Geek</h1>
+    	<a href="javascript:moveToAddBeerPage()" data-icon="plus" data-theme="b">Add</a>
+        <a href="javascript:moveToUserPage()" data-icon="gear" data-theme="b">Option</a>
+
+        <div data-role="navbar" data-theme="a" data-iconpos="left">
+            <ul>
+                <li><a href="main.html" data-icon="grid">All</a></li>
+                <li><a href="userbeer.html" data-icon="star">User's</a></li>
+                <li><a href="search.html" class="ui-btn-active" data-icon="search">Search</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- END HEADER -->
+    
+    <!-- START CONTENT -->
+    <div data-role="content">
+
+        <fieldset data-role="controlgroup" data-role="fieldcontain" data-type="horizontal">
+            <!-- <legend>検索項目:</legend> -->
+            <input type="radio" name="selectSearch" id="searchBeerName" value="0" checked="checked" />
+            <label for="searchBeerName">銘柄</label>
+            <input type="radio" name="selectSearch" id="searchBruery" value="1"  />
+            <label for="searchBruery">製造元</label>
+            <input type="radio" name="selectSearch" id="searchCategory" value="2"  />
+            <label for="searchCategory">種類</label>
+        </fieldset>
+
+        <hr>
+
+        <div class="flexbox box-align">
+            <input id="searchValue" type="text" name="name" value=""  style="margin-right: 10px;" />
+            <select name="selectSearchValue" id="selectSearchValue">
+                <option value="-1">フリーワード</option>
+            </select>
+        </div>
+
+        <div style='margin:32px auto 32px auto; max-width: 300px;'>
+            <a href='javascript:searchBeer()' id='searchBeerButton' data-role='button' data-theme='b'>Search</a>
+        </div>
+
+        <ul id="search_listview" data-role="listview" data-split-icon="delete" data-theme="d"></ul>
+
+    </div>
+    <!-- END CONTENT -->
+    
+    
+</div>
+<!-- END PAGE
